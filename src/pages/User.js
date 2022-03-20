@@ -7,7 +7,6 @@ import {
   Card,
   Table,
   Stack,
-  Avatar,
   Button,
   Checkbox,
   TableRow,
@@ -31,10 +30,11 @@ import USERLIST from '../_mocks_/user';
 // ----------------------------------------------------------------------
 
 const TABLE_HEAD = [
-  { id: 'name', label: 'Name', alignRight: false },
-  { id: 'company', label: 'Company', alignRight: false },
-  { id: 'role', label: 'Role', alignRight: false },
-  { id: 'isVerified', label: 'Verified', alignRight: false },
+  { id: 'name', label: 'Package Name', alignRight: false },
+  { id: 'updated', label: 'Last Updated', alignRight: false },
+  { id: 'version', label: 'Package Version', alignRight: false },
+  { id: 'docsversion', label: 'Docs', alignRight: false },
+  { id: 'sdkversion', label: 'SDKs', alignRight: false },
   { id: 'status', label: 'Status', alignRight: false },
   { id: '' }
 ];
@@ -131,11 +131,11 @@ export default function User() {
   const isUserNotFound = filteredUsers.length === 0;
 
   return (
-    <Page title="User | Minimal-UI">
+    <Page title="API Packages | Speakeasy">
       <Container>
         <Stack direction="row" alignItems="center" justifyContent="space-between" mb={5}>
           <Typography variant="h4" gutterBottom>
-            User
+            API Packages
           </Typography>
           <Button
             variant="contained"
@@ -143,7 +143,7 @@ export default function User() {
             to="#"
             startIcon={<Iconify icon="eva:plus-fill" />}
           >
-            New User
+            New Package
           </Button>
         </Stack>
 
@@ -170,7 +170,7 @@ export default function User() {
                   {filteredUsers
                     .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                     .map((row) => {
-                      const { id, name, role, status, company, avatarUrl, isVerified } = row;
+                      const { id, name, updated, version, docsversion, sdkversion, status } = row;
                       const isItemSelected = selected.indexOf(name) !== -1;
 
                       return (
@@ -188,21 +188,22 @@ export default function User() {
                               onChange={(event) => handleClick(event, name)}
                             />
                           </TableCell>
-                          <TableCell component="th" scope="row" padding="none">
+                          <TableCell component="th" scope="row" padding="normal">
                             <Stack direction="row" alignItems="center" spacing={2}>
-                              <Avatar alt={name} src={avatarUrl} />
+                              {/* <Avatar alt={name} src={name} /> */}
                               <Typography variant="subtitle2" noWrap>
                                 {name}
                               </Typography>
                             </Stack>
                           </TableCell>
-                          <TableCell align="left">{company}</TableCell>
-                          <TableCell align="left">{role}</TableCell>
-                          <TableCell align="left">{isVerified ? 'Yes' : 'No'}</TableCell>
+                          <TableCell align="left">{updated}</TableCell>
+                          <TableCell align="left">{version}</TableCell>
+                          <TableCell align="left">{docsversion}</TableCell>
+                          <TableCell align="left">{sdkversion}</TableCell>
                           <TableCell align="left">
                             <Label
                               variant="ghost"
-                              color={(status === 'banned' && 'error') || 'success'}
+                              color={status === 'success' || 'error' || 'warning'}
                             >
                               {sentenceCase(status)}
                             </Label>

@@ -2,6 +2,7 @@ import { faker } from '@faker-js/faker';
 import PropTypes from 'prop-types';
 import { formatDistance } from 'date-fns';
 import { Link as RouterLink } from 'react-router-dom';
+import { sample } from 'lodash';
 // material
 import { Box, Stack, Link, Card, Button, Divider, Typography, CardHeader } from '@mui/material';
 // utils
@@ -15,7 +16,7 @@ import Iconify from '../../../components/Iconify';
 const NEWS = [...Array(5)].map((_, index) => {
   const setIndex = index + 1;
   return {
-    title: faker.name.title(),
+    title: sample(['Orders API', 'Accounts API', 'Payments API', 'Statements API']),
     description: faker.lorem.paragraphs(),
     image: mockImgCover(setIndex),
     postedAt: faker.date.soon()
@@ -59,7 +60,7 @@ function NewsItem({ news }) {
 export default function AppNewsUpdate() {
   return (
     <Card>
-      <CardHeader title="News Update" />
+      <CardHeader title="Latest API Changes" />
 
       <Scrollbar>
         <Stack spacing={3} sx={{ p: 3, pr: 0 }}>

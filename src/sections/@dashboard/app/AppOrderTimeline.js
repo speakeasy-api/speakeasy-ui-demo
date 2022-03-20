@@ -17,27 +17,27 @@ import { fDateTime } from '../../../utils/formatTime';
 
 const TIMELINES = [
   {
-    title: '1983, orders, $4220',
+    title: 'Orders API Package created',
     time: faker.date.past(),
     type: 'order1'
   },
   {
-    title: '12 Invoices have been paid',
+    title: 'Python SDK Created',
     time: faker.date.past(),
     type: 'order2'
   },
   {
-    title: 'Order #37745 from September',
+    title: 'Typescript SDK Created',
     time: faker.date.past(),
     type: 'order3'
   },
   {
-    title: 'New order placed #XF-2356',
+    title: 'Docs sign off',
     time: faker.date.past(),
     type: 'order4'
   },
   {
-    title: 'New order placed #XF-2346',
+    title: 'API Gateway updated',
     time: faker.date.past(),
     type: 'order5'
   }
@@ -59,8 +59,8 @@ function OrderItem({ item, isLast }) {
           sx={{
             bgcolor:
               (type === 'order1' && 'primary.main') ||
-              (type === 'order2' && 'success.main') ||
-              (type === 'order3' && 'info.main') ||
+              (type === 'order2' && 'primary.main') ||
+              (type === 'order3' && 'primary.main') ||
               (type === 'order4' && 'warning.main') ||
               'error.main'
           }}
@@ -86,7 +86,7 @@ export default function AppOrderTimeline() {
         }
       }}
     >
-      <CardHeader title="Order Timeline" />
+      <CardHeader title="Ongoing API Release" />
       <CardContent>
         <Timeline>
           {TIMELINES.map((item, index) => (
