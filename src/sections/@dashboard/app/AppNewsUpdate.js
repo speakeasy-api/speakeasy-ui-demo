@@ -17,7 +17,14 @@ const NEWS = [...Array(5)].map((_, index) => {
   const setIndex = index + 1;
   return {
     title: sample(['Orders API', 'Accounts API', 'Payments API', 'Statements API']),
-    description: faker.lorem.paragraphs(),
+    description: sample([
+      'New order status "Pending" added',
+      'Field "Previous" Removed',
+      'Field "accountID unlinked from id',
+      'Field "Name" changed to string type',
+      'New version of API created',
+      'Field "date" has been deleted'
+    ]),
     image: mockImgCover(setIndex),
     postedAt: faker.date.soon()
   };

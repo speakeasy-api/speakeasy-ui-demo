@@ -201,10 +201,7 @@ export default function User() {
                           <TableCell align="left">{docsversion}</TableCell>
                           <TableCell align="left">{sdkversion}</TableCell>
                           <TableCell align="left">
-                            <Label
-                              variant="ghost"
-                              color={status === 'success' || 'error' || 'warning'}
-                            >
+                            <Label variant="ghost" color={status === 'live' ? 'success' : 'error'}>
                               {sentenceCase(status)}
                             </Label>
                           </TableCell>
