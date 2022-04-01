@@ -24,7 +24,7 @@ export default function Blog() {
       <Container>
         <Stack direction="row" alignItems="center" justifyContent="space-between" mb={5}>
           <Typography variant="h4" gutterBottom>
-            Blog
+            Docs and SDKs
           </Typography>
           <Button
             variant="contained"
@@ -32,7 +32,7 @@ export default function Blog() {
             to="#"
             startIcon={<Iconify icon="eva:plus-fill" />}
           >
-            New Post
+            New Artifact
           </Button>
         </Stack>
 

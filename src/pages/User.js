@@ -15,7 +15,8 @@ import {
   Container,
   Typography,
   TableContainer,
-  TablePagination
+  TablePagination,
+  Link
 } from '@mui/material';
 // components
 import Page from '../components/Page';
@@ -198,7 +199,9 @@ export default function User() {
                           </TableCell>
                           <TableCell align="left">{updated}</TableCell>
                           <TableCell align="left">{version}</TableCell>
-                          <TableCell align="left">{docsversion}</TableCell>
+                          <TableCell align="left">
+                            <Link href="https://docuowl.github.io/demo/">{docsversion}</Link>
+                          </TableCell>
                           <TableCell align="left">{sdkversion}</TableCell>
                           <TableCell align="left">
                             <Label variant="ghost" color={status === 'live' ? 'success' : 'error'}>

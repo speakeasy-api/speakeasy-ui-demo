@@ -23,7 +23,6 @@ export default function EcommerceShop() {
       gender: '',
       category: '',
       colors: '',
-      priceRange: '',
       rating: ''
     },
     onSubmit: () => {
@@ -50,7 +49,7 @@ export default function EcommerceShop() {
     <Page title="Dashboard: Products | Minimal-UI">
       <Container>
         <Typography variant="h4" sx={{ mb: 5 }}>
-          Products
+          Extensions
         </Typography>
 
         <Stack

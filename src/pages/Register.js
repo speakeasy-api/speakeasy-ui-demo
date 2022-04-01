@@ -40,7 +40,7 @@ const ContentStyle = styled('div')(({ theme }) => ({
 
 export default function Register() {
   return (
-    <RootStyle title="Account | Minimal-UI">
+    <RootStyle title="Customer Access | Minimal-UI">
       <AuthLayout>
         Already have an account? &nbsp;
         <Link underline="none" variant="subtitle2" component={RouterLink} to="/login">
@@ -50,9 +50,9 @@ export default function Register() {
 
       <SectionStyle sx={{ display: { xs: 'none', md: 'flex' } }}>
         <Typography variant="h3" sx={{ px: 5, mt: 10, mb: 5 }}>
-          Manage the job more effectively with Minimal
+          Directly Permission Artifacts for your Customers to use
         </Typography>
-        <img alt="register" src="/static/illustrations/illustration_register.png" />
+        {/* <img alt="register" src="/static/illustrations/illustration_register.png" /> */}
       </SectionStyle>
 
       <Container>
